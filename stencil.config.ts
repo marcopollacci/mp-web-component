@@ -21,6 +21,11 @@ export const config: Config = {
     },
     {
       type: 'www',
+      copy: [
+        {
+          src: 'cloudflare', dest: 'build'
+        }
+      ],
       serviceWorker: null, // disable service workers
     },
   ],
