@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property            | Attribute             | Description | Type     | Default     |
+| ------------------- | --------------------- | ----------- | -------- | ----------- |
+| `stringFontAwesome` | `string-font-awesome` |             | `string` | `undefined` |
+
+
 ## Dependencies
 
 ### Used by

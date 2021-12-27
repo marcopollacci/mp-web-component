@@ -9,6 +9,7 @@
 
 | Property        | Attribute        | Description | Type              | Default |
 | --------------- | ---------------- | ----------- | ----------------- | ------- |
+| `defaultIcon`   | `default-icon`   |             | `string`          | `null`  |
 | `populateList`  | --               |             | `IpopulateList[]` | `[]`    |
 | `selectedValue` | `selected-value` |             | `string`          | `''`    |
 
