@@ -1,10 +1,10 @@
 #!/bin/sh
 
-branch=$(git branch --show-current)
+branch=$CF_PAGES_BRANCH
 
 echo $branch;
 
-if [ $branch = 'master' ]
+if [ "$branch" -eq  = 'master' ]
 then
    sed -i 's/build\/assets\/fa\/webfonts/https:\/\/web-component.marcopollacci.it\/assets\/fa\/webfonts/' src/components/mp-font-awesome/mp-font-awesome.scss
 else
