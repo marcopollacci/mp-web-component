@@ -1,1 +1,0 @@
-import{r as t,h as s,H as r}from"./p-6fd554b2.js";let o=class{constructor(s){t(this,s)}render(){return s(r,null,this.titleComponent&&s("h2",null,this.titleComponent),s("slot",null))}};o.style=":host{display:block}h2{border-bottom:0.1rem solid #000000}";export{o as mp_text_description}
