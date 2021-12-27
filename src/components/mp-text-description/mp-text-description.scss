@@ -1,0 +1,8 @@
+@import "src/styles/variable";
+:host {
+  display: block;
+}
+
+h2 {
+  border-bottom: $base * 0.1 solid #000000;
+}

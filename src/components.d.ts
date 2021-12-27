@@ -6,56 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface MpTextDescription {
+        "titleComponent": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLMpTextDescriptionElement extends Components.MpTextDescription, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLMpTextDescriptionElement: {
+        prototype: HTMLMpTextDescriptionElement;
+        new (): HTMLMpTextDescriptionElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "mp-text-description": HTMLMpTextDescriptionElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface MpTextDescription {
+        "titleComponent"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "mp-text-description": MpTextDescription;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "mp-text-description": LocalJSX.MpTextDescription & JSXBase.HTMLAttributes<HTMLMpTextDescriptionElement>;
         }
     }
 }
