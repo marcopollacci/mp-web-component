@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'mp-component',
+  srcDir: 'src',
   plugins: [
     sass()
   ],

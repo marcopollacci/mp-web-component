@@ -1,0 +1,46 @@
+:host {
+  display: block;
+}
+
+.selector {
+  margin-left: auto;
+}
+
+ul {
+  border: 1px solid black;
+  padding: 0;
+  border-radius: 4px;
+  position: relative;
+  width: 100%;
+  min-width: 200px;
+  li {
+    display: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-top: 1px solid black;
+    min-width: 150px;
+
+    &:first-child {
+      display: flex;
+      border-top: 0;
+      //& > * {
+      //  flex: 0 1 1 90%;
+      //}
+    }
+    &:hover {
+      background-color: #ddd;
+    }
+    &:first-child:hover {
+      background-color: transparent;
+    }
+    & > div {
+      flex: 0 0 auto;
+      &:first-of-type {
+        min-width: 2rem;
+      }
+    }
+  }
+  &.open li {
+    display: flex;
+  }
+}
