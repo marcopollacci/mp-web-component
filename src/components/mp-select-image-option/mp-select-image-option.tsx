@@ -28,8 +28,7 @@ export class MpSelectImageOption {
     }
   }
 
-  onChooseValue(singleItem: IpopulateList, index: number): void {
-    console.log('index', index)
+  onChooseValue(singleItem: IpopulateList): void {
     this.selectedValue = singleItem.value;
     this.choosedValue.emit(singleItem.value);
     this.currentSelected = singleItem;
@@ -43,8 +42,8 @@ export class MpSelectImageOption {
                {this.currentSelected ? this.renderFirstLi() : 'Choose Option...'}
                <mp-font-awesome class="selector" stringFontAwesome={`fas fa-angle-${this.open ? 'up' : 'down' }`} />
              </li>
-          {this.populateList.map((singleItem, index) =>
-            <li onClick={() => this.onChooseValue(singleItem, index)}>
+          {this.populateList.map((singleItem) =>
+            <li onClick={() => this.onChooseValue(singleItem)}>
               {(singleItem.faImage || this.defaultIcon) && <div><mp-font-awesome stringFontAwesome={singleItem.faImage || this.defaultIcon} /></div>}<div>{singleItem.description}</div>
             </li>
           )}
