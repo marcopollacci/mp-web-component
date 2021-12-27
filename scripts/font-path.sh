@@ -4,7 +4,7 @@ branch=$CF_PAGES_BRANCH
 
 echo $branch;
 
-if [ "$branch" -eq  = 'master' ]
+if [ "$branch" = "master" ]
 then
    sed -i 's/build\/assets\/fa\/webfonts/https:\/\/web-component.marcopollacci.it\/assets\/fa\/webfonts/' src/components/mp-font-awesome/mp-font-awesome.scss
 else
