@@ -11,7 +11,7 @@
 | -------------- | -------------- | ----------- | ----------------- | ------- |
 | `defaultIcon`  | `default-icon` |             | `string`          | `null`  |
 | `disabled`     | `disabled`     |             | `boolean`         | `false` |
-| `populateList` | --             | ciaone      | `IpopulateList[]` | `[]`    |
+| `populateList` | --             |             | `IpopulateList[]` | `[]`    |
 | `readonly`     | `readonly`     |             | `boolean`         | `false` |
 | `value`        | `value`        |             | `string`          | `''`    |
 
