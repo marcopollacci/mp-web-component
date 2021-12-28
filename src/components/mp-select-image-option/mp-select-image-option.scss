@@ -1,9 +1,16 @@
+@import "src/styles/variable";
+
 :host {
   display: block;
 }
 
+:host([disabled]), :host([readonly]) {
+  background-color: $disabled-color;
+}
+
 .selector {
   margin-left: auto;
+
 }
 
 ul {
@@ -13,6 +20,7 @@ ul {
   position: relative;
   width: 100%;
   min-width: 200px;
+
   li {
     display: none;
     cursor: pointer;
@@ -27,19 +35,24 @@ ul {
       //  flex: 0 1 1 90%;
       //}
     }
+
     &:hover {
       background-color: #ddd;
     }
+
     &:first-child:hover {
       background-color: transparent;
     }
+
     & > div {
       flex: 0 0 auto;
+
       &:first-of-type {
         min-width: 2rem;
       }
     }
   }
+
   &.open li {
     display: flex;
   }

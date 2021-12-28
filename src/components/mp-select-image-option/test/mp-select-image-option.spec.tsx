@@ -23,11 +23,12 @@ describe('mp-select-image-option', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [MpSelectImageOption],
-      html: `<mp-select-image-option></mp-select-image-option>`,
+      html: `<mp-select-image-option><input type='hidden' /></mp-select-image-option>`,
     });
     expect(page.root).toEqualHtml(`
-      <mp-select-image-option>
+      <mp-select-image-option value=''>
         <mock:shadow-root>
+          <slot></slot>
             <ul>
              <li>
                Choose Option...
@@ -35,6 +36,7 @@ describe('mp-select-image-option', () => {
            </li>
          </ul>
         </mock:shadow-root>
+        <input type='hidden'>
       </mp-select-image-option>
     `);
   });
@@ -43,12 +45,13 @@ describe('mp-select-image-option', () => {
       components: [MpSelectImageOption],
       template: () => (<mp-select-image-option
         populateList={populateList}
-        selectedValue={'1'}
-      />),
+        value={'1'}
+      ><input type='hidden' /></mp-select-image-option>),
     });
     expect(page.root).toEqualHtml(`
-      <mp-select-image-option>
+      <mp-select-image-option value='1'>
         <mock:shadow-root>
+        <slot></slot>
             <ul>
              <li>
                <div>
@@ -79,19 +82,26 @@ describe('mp-select-image-option', () => {
            </li>
          </ul>
         </mock:shadow-root>
+        <input type='hidden'>
       </mp-select-image-option>
     `);
   });
   describe('testing single function', () => {
     const elMpSelectImageOption = new MpSelectImageOption();
+    beforeEach(() => {
+      spyOn(elMpSelectImageOption, 'connectedCallback').and.stub();
+      const htmlInput = new HTMLInputElement();
+      elMpSelectImageOption.slotInput = htmlInput;
+    });
     it('dispatch event on click', async () => {
       const spyEmit = spyOn(elMpSelectImageOption.choosedValue, 'emit');
+      spyOn(elMpSelectImageOption.slotInput, 'setAttribute').and.stub();
       elMpSelectImageOption.onChooseValue(populateList[0]);
       expect(spyEmit).toHaveBeenCalled();
     });
-    it('dispatch event on click', async () => {
+    it('populate list', async () => {
       elMpSelectImageOption.populateList = populateList;
-      elMpSelectImageOption.selectedValue = '1';
+      elMpSelectImageOption.value = '1';
       expect(elMpSelectImageOption.currentSelected).toEqual(populateList[0]);
     });
   });

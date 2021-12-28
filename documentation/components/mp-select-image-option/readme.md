@@ -7,11 +7,13 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type              | Default |
-| --------------- | ---------------- | ----------- | ----------------- | ------- |
-| `defaultIcon`   | `default-icon`   |             | `string`          | `null`  |
-| `populateList`  | --               |             | `IpopulateList[]` | `[]`    |
-| `selectedValue` | `selected-value` |             | `string`          | `''`    |
+| Property       | Attribute      | Description | Type              | Default |
+| -------------- | -------------- | ----------- | ----------------- | ------- |
+| `defaultIcon`  | `default-icon` |             | `string`          | `null`  |
+| `disabled`     | `disabled`     |             | `boolean`         | `false` |
+| `populateList` | --             | ciaone      | `IpopulateList[]` | `[]`    |
+| `readonly`     | `readonly`     |             | `boolean`         | `false` |
+| `value`        | `value`        |             | `string`          | `''`    |
 
 
 ## Events

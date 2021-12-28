@@ -12,8 +12,10 @@ export namespace Components {
     }
     interface MpSelectImageOption {
         "defaultIcon": string;
+        "disabled": boolean;
         "populateList": IpopulateList[];
-        "selectedValue": string;
+        "readonly": boolean;
+        "value": string;
     }
     interface MpTextDescription {
         "titleComponent": string;
@@ -50,9 +52,11 @@ declare namespace LocalJSX {
     }
     interface MpSelectImageOption {
         "defaultIcon"?: string;
+        "disabled"?: boolean;
         "onChoosedValue"?: (event: CustomEvent<string>) => void;
         "populateList"?: IpopulateList[];
-        "selectedValue"?: string;
+        "readonly"?: boolean;
+        "value"?: string;
     }
     interface MpTextDescription {
         "titleComponent"?: string;
