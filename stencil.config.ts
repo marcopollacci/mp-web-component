@@ -23,7 +23,7 @@ export const config: Config = {
       type: 'www',
       copy: [
         {
-          src: 'cloudflare', dest: 'build',
+          src: 'cloudflare', dest: '',
         },
         {
           src: 'assets', dest: 'build/assets',
