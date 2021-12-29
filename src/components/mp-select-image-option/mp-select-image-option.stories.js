@@ -7,7 +7,10 @@ export default {
   component: MpSelectImageOption,
   parameters: {
     notes: readme,
-  }
+    actions: {
+      handles: ['choosedValue'],
+    },
+  },
 };
 
 const defaultArgs = {
