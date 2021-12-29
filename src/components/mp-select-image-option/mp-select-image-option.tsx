@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State, Watch } from '@stencil/core';
 import { IpopulateList } from './mp-select-image-option.model';
 
 @Component({
@@ -23,6 +23,19 @@ export class MpSelectImageOption {
   @Watch('value')
   watchValue() {
     this.populateFirstLi();
+  }
+
+  @Listen('keydown', { target: 'body' })
+  keyListener(ev: KeyboardEvent) {
+    if (['ArrowUp', 'ArrowDown'].includes(ev.key)) {
+      this.changeSelected(ev.key);
+    }
+  }
+
+  changeSelected(key: string): void {
+    if (this.open) {
+      this.value = (+this.value + (key === 'ArrowUp' ? this.value === '1' ? 0 : -1 : this.value !== (this.populateList.length).toString() ? +1 : 0)).toString();
+    }
   }
 
   connectedCallback(): void {
@@ -58,7 +71,7 @@ export class MpSelectImageOption {
                 <mp-font-awesome class='selector' stringFontAwesome={`fas fa-angle-${this.open ? 'up' : 'down'}`} />}
             </li>
             {(!this.disabled && !this.readonly) && this.populateList.map((singleItem) =>
-              <li onClick={() => this.onChooseValue(singleItem)}>
+              <li class={{ current: this.value === singleItem.value }} onClick={() => this.onChooseValue(singleItem)}>
                 {(singleItem.faImage || this.defaultIcon) && <div>
                   <mp-font-awesome stringFontAwesome={singleItem.faImage || this.defaultIcon} />
                 </div>}

@@ -37,7 +37,7 @@ ul {
       border-top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus, &.current {
       background-color: #ddd;
     }
 
