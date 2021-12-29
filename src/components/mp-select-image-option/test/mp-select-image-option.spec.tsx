@@ -62,7 +62,7 @@ describe('mp-select-image-option', () => {
                </div>
                <mp-font-awesome class='selector' stringfontawesome='fas fa-angle-down'></mp-font-awesome>
              </li>
-            <li>
+            <li class='current'>
              <div>
                <mp-font-awesome stringfontawesome='fab fa-amazon'></mp-font-awesome>
              </div>
