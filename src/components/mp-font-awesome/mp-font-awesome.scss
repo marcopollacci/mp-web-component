@@ -1,0 +1,11 @@
+$fa-font-path: "build/assets/fa/webfonts";
+
+@import "../../assets/fa/scss/fontawesome.scss";
+@import "../../assets/fa/scss/solid.scss";
+@import "../../assets/fa/scss/regular.scss";
+@import "../../assets/fa/scss/brands.scss";
+
+:host {
+  display: block;
+  vertical-align: text-bottom;
+}

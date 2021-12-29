@@ -3,21 +3,34 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'mp-component',
+  srcDir: 'src',
   plugins: [
-    sass()
+    sass(),
   ],
   outputTargets: [
     {
+      type: 'dist',
+      esmLoaderPath: '../loader',
+    },
+    {
+      type: 'dist-custom-elements',
+    },
+    {
       type: 'docs-readme',
-      dir: 'documentation',
-      footer: '*Built with love!*'
+      footer: '*Built with love!*',
     },
     {
       type: 'www',
       copy: [
         {
-          src: 'cloudflare', dest: 'build'
-        }
+          src: 'cloudflare', dest: '',
+        },
+        {
+          src: 'assets', dest: 'build/assets',
+        },
+        {
+          src: 'storybook', dest: '',
+        },
       ],
       serviceWorker: null, // disable service workers
     },

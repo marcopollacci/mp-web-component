@@ -1,16 +1,61 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+<html dir='ltr' lang='en' xmlns='http://www.w3.org/1999/html'>
+<head>
+  <meta charset='utf-8' />
+  <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0' name='viewport' />
+  <title>Stencil Component Starter</title>
+  <script src='/build/mp-component.esm.js' type='module'></script>
+  <script nomodule src='/build/mp-component.js'></script>
+</head>
+<body>
+<!--    <mp-text-description title-component='Test'>-->
+<!--        test 2-->
+<!--    </mp-text-description>-->
 
-    <script type="module" src="/build/mp-component.esm.js"></script>
-    <script nomodule src="/build/mp-component.js"></script>
-  </head>
-  <body>
-    <mp-text-description title-component='Test'>
-        test 2
-    </mp-text-description>
-  </body>
+<form id='BookPackageForm' onsubmit='event.preventDefault(); validateMyForm();'>
+  <mp-select-image-option>
+    <!--    <input type='hidden' />-->
+  </mp-select-image-option>
+  <button type='submit'>Formella</button>
+</form>
+
+
+<mp-font-awesome></mp-font-awesome>
+
+<script type='application/javascript'>
+  const [myElem] = document.getElementsByTagName('mp-select-image-option');
+
+  function validateMyForm() {
+    const inputs = document.getElementById('BookPackageForm').elements;
+    console.log(inputs);
+
+  }
+
+  console.log('fwefew', myElem);
+  // myElem.setAttribute('populate-list', [{
+  //   description: 'ciaone'
+  // }])
+  myElem.value = '1';
+  myElem.defaultIcon = 'fas fa-battery-three-quarters';
+  myElem.populateList = [
+    {
+      value: '1',
+      description: 'ciaone',
+      faImage: 'fab fa-amazon',
+    },
+    {
+      value: '2',
+      description: 'prontone',
+    },
+    {
+      value: '3',
+      description: 'gigione',
+    },
+  ];
+  document.addEventListener('choosedValue', (event) => {
+    console.log('choosedValue', event);
+  });
+</script>
+</body>
+
 </html>
