@@ -19,8 +19,8 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
-    "build-cloud": "sh scripts/font-path.sh && stencil build --docs",
+    "build": "stencil build --docs && sh scripts/copy.sh",
+    "build-cloud": "sh scripts/font-path.sh && stencil build --docs && sh scripts/copy.sh",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -28,7 +28,7 @@
     "generate": "stencil generate",
     "storybook.run": "start-storybook -p 6006 -s dist",
     "storybook": "npm-run-all --parallel build storybook.run",
-    "build-storybook": "build-storybook -c ./.storybook -o storybook"
+    "build-storybook": "build-storybook -c ./.storybook -o src/storybook"
   },
   "dependencies": {
     "@stencil/core": "^2.11.0",

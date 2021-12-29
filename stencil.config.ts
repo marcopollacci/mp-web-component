@@ -28,6 +28,9 @@ export const config: Config = {
         {
           src: 'assets', dest: 'build/assets',
         },
+        {
+          src: 'storybook', dest: '',
+        },
       ],
       serviceWorker: null, // disable service workers
     },
