@@ -11,7 +11,7 @@ export namespace Components {
         "stringFontAwesome": string;
     }
     interface MpSelectImageOption {
-        "defaultIcon": string;
+        "defaultIcon"?: string;
         "disabled": boolean;
         "populateList": IpopulateList[];
         "readonly": boolean;

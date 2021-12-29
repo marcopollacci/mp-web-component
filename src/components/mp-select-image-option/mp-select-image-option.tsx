@@ -11,11 +11,11 @@ export class MpSelectImageOption {
   slotInput: HTMLInputElement = null;
 
   @Element() el: HTMLElement;
-  @Prop({ mutable: true, attribute: 'populate-list' }) populateList: IpopulateList[] = [];
+  @Prop({ mutable: true }) populateList: IpopulateList[] = [];
   @Prop({ mutable: true, reflect: true }) value: string = '';
   @Prop({ mutable: true }) disabled = false;
   @Prop({ mutable: true }) readonly = false;
-  @Prop() defaultIcon: string = null;
+  @Prop() defaultIcon?: string = null;
   @State() open = false;
   @State() currentSelected: IpopulateList = null;
   @Event() choosedValue: EventEmitter<string>;
