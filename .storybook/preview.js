@@ -1,21 +1,7 @@
-import { configure } from '@storybook/html';
-import buildStencilStories from './stories/automatedStories';
+import { defineCustomElements } from '../dist/esm/loader';
 
-const loader = require('../loader/index.cjs.js');
+defineCustomElements();
 
-const COLLECTIONS = [
-  {
-    name: 'My Components',
-    componentsCtx: require.context('../dist/collection', true, /\/components\/([^/]+)\/\1\.js$/),
-    storiesCtx: require.context('../src', true, /\.stories\.tsx$/),
-  },
-];
-
-function loadStories() {
-  loader.defineCustomElements(window);
-  COLLECTIONS.forEach(({ name, componentsCtx, storiesCtx }) => {
-    buildStencilStories(name, componentsCtx, storiesCtx);
-  });
-}
-
-configure(loadStories, module);
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+};

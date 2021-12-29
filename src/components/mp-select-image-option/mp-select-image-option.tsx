@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Host, Prop, State } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Host, Prop, State, Watch } from '@stencil/core';
 import { IpopulateList } from './mp-select-image-option.model';
 
 @Component({
@@ -19,6 +19,11 @@ export class MpSelectImageOption {
   @State() open = false;
   @State() currentSelected: IpopulateList = null;
   @Event() choosedValue: EventEmitter<string>;
+
+  @Watch('value')
+  watchValue() {
+    this.populateFirstLi();
+  }
 
   connectedCallback(): void {
     this.slotInput = this.el.querySelector('input') as HTMLInputElement;

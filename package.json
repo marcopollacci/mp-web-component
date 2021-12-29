@@ -28,10 +28,11 @@
     "generate": "stencil generate",
     "storybook.run": "start-storybook -p 6006 -s dist",
     "storybook": "npm-run-all --parallel build storybook.run",
-    "build-storybook": "build-storybook -c ./.storybook -o ../public"
+    "build-storybook": "build-storybook -c ./.storybook -o storybook"
   },
   "dependencies": {
-    "@stencil/core": "^2.11.0"
+    "@stencil/core": "^2.11.0",
+    "react": "^16.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
@@ -42,6 +43,7 @@
     "@storybook/addon-notes": "^5.3.21",
     "@storybook/addon-viewport": "^6.4.9",
     "@storybook/html": "^6.4.9",
+    "@storybook/react": "^6.4.9",
     "@types/jest": "^26.0.24",
     "babel-loader": "^8.2.3",
     "case": "^1.6.3",
