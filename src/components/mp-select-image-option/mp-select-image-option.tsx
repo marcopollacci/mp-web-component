@@ -73,7 +73,7 @@ export class MpSelectImageOption {
 
   renderFirstLi(): string[] {
     const returnArray = [
-      <div>{this.currentSelected.description}</div>,
+      <div><p>{this.currentSelected.description}</p></div>,
     ];
     if (this.currentSelected.faImage || this.defaultIcon) {
       returnArray.unshift(<div>
