@@ -82,7 +82,7 @@ describe('mp-select-image-option', () => {
            </li>
          </ul>
         </mock:shadow-root>
-        <input type='hidden'>
+        <input type='hidden' value='1'>
       </mp-select-image-option>
     `);
   });

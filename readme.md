@@ -3,4 +3,29 @@
 
 # Marco Pollacci Web Component Library
 
-description coming soon...
+Simple Library with component that i love to use.
+
+## How to use
+
+You can use it by include only one script in your project:
+
+- Master version
+
+```html
+
+<script type='module' src='https://web-component.marcopollacci.it/build/mp-component.esm.js'
+        crossorigin='anonymous'></script>
+- ```
+
+- Develop version
+
+ ```html
+
+<script type='module' src='https://develop.mp-web-component.pages.dev/build/mp-component.esm.js'
+        crossorigin='anonymous'></script>
+- ```
+
+You can find also a Storybook in the root of each version (https://web-component.marcopollacci.it
+or https://develop.mp-web-component.pages.dev )
+
+Enjoy!
