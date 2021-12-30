@@ -34,7 +34,13 @@ export class MpSelectImageOption {
 
   changeSelected(key: string): void {
     if (this.open) {
-      this.value = (+this.value + (key === 'ArrowUp' ? this.value === '1' ? 0 : -1 : this.value !== (this.populateList.length).toString() ? +1 : 0)).toString();
+      const currentIndex = this.populateList.findIndex((singolo) => singolo.value === this.value);
+      if (key === 'ArrowUp' && this.value !== this.populateList[0].value) {
+        this.value = this.populateList[currentIndex - 1].value;
+      }
+      if (key === 'ArrowDown' && this.value !== this.populateList[this.populateList.length - 1].value) {
+        this.value = this.populateList[currentIndex + 1].value;
+      }
     }
   }
 
@@ -49,6 +55,7 @@ export class MpSelectImageOption {
   populateFirstLi(): void {
     if (this.populateList.length && this.value) {
       this.currentSelected = this.populateList.find((singolo) => singolo.value === this.value);
+      this.setSlot(this.value);
     }
   }
 
@@ -56,7 +63,11 @@ export class MpSelectImageOption {
     this.value = singleItem.value;
     this.choosedValue.emit(singleItem.value);
     this.currentSelected = singleItem;
-    this.slotInput.setAttribute('value', singleItem.value);
+    this.setSlot(singleItem.value);
+  }
+
+  setSlot(value: string): void {
+    this.slotInput.setAttribute('value', value);
   }
 
   render() {
