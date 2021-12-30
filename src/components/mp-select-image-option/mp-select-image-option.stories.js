@@ -48,7 +48,7 @@ const Template = args => {
       },
       {
         value: '3',
-        description: 'gigione',
+        description: 'opzione',
       },
     ];
   });

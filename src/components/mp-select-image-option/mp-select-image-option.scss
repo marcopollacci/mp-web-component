@@ -10,6 +10,10 @@
   cursor: default;
 }
 
+::slotted(*) {
+  display: none;
+}
+
 .selector {
   margin-left: auto;
 
