@@ -15,7 +15,7 @@ You can use it by include only one script in your project:
 
 <script type='module' src='https://web-component.marcopollacci.it/build/mp-component.esm.js'
         crossorigin='anonymous'></script>
-- ```
+```
 
 - Develop version
 
@@ -23,7 +23,7 @@ You can use it by include only one script in your project:
 
 <script type='module' src='https://develop.mp-web-component.pages.dev/build/mp-component.esm.js'
         crossorigin='anonymous'></script>
-- ```
+```
 
 You can find also a Storybook in the root of each version (https://web-component.marcopollacci.it
 or https://develop.mp-web-component.pages.dev )
