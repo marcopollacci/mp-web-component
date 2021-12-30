@@ -24,6 +24,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
+    "test.coverage": "stencil test --spec --e2e --coverage",
     "test.script": "sh scripts/font-path.sh",
     "generate": "stencil generate",
     "storybook.run": "start-storybook -p 6006 -s dist",
