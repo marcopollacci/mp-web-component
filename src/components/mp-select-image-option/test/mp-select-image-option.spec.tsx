@@ -104,5 +104,33 @@ describe('mp-select-image-option', () => {
       elMpSelectImageOption.value = '1';
       expect(elMpSelectImageOption.currentSelected).toEqual(populateList[0]);
     });
+    it('keyListener: if one of key, call changeSelect', () => {
+      spyOn(elMpSelectImageOption, 'changeSelected');
+      elMpSelectImageOption.keyListener({
+        key: 'ArrowUp',
+      } as unknown as KeyboardEvent);
+      expect(elMpSelectImageOption.changeSelected).lastCalledWith('ArrowUp');
+    });
+    describe('changeSelected', () => {
+      beforeEach(() => {
+        elMpSelectImageOption.open = true;
+      });
+      it('if called by Enter, close the div', () => {
+        elMpSelectImageOption.changeSelected('Enter');
+        expect(elMpSelectImageOption.open).toEqual(false);
+      });
+      it('if called by ArrowUp and value different from first value of array', () => {
+        elMpSelectImageOption.populateList = populateList;
+        elMpSelectImageOption.value = '2';
+        elMpSelectImageOption.changeSelected('ArrowUp');
+        expect(elMpSelectImageOption.value).toEqual('1');
+      });
+      it('if called by ArrowDown and value different from last value of array', () => {
+        elMpSelectImageOption.populateList = populateList;
+        elMpSelectImageOption.value = '2';
+        elMpSelectImageOption.changeSelected('ArrowDown');
+        expect(elMpSelectImageOption.value).toEqual('3');
+      });
+    });
   });
 });

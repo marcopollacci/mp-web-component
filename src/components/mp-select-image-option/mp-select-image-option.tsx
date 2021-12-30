@@ -27,7 +27,7 @@ export class MpSelectImageOption {
 
   @Listen('keydown', { target: 'body' })
   keyListener(ev: KeyboardEvent) {
-    if (['ArrowUp', 'ArrowDown'].includes(ev.key)) {
+    if (['ArrowUp', 'ArrowDown', 'Enter'].includes(ev.key)) {
       this.changeSelected(ev.key);
     }
   }
@@ -40,6 +40,9 @@ export class MpSelectImageOption {
       }
       if (key === 'ArrowDown' && this.value !== this.populateList[this.populateList.length - 1].value) {
         this.value = this.populateList[currentIndex + 1].value;
+      }
+      if (key === 'Enter') {
+        this.open = false;
       }
     }
   }
