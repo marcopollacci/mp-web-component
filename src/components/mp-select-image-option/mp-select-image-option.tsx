@@ -76,16 +76,24 @@ export class MpSelectImageOption {
   render() {
     if (this.slotInput) {
       return (
-        <Host>
+        <Host
+          aria-controls='listbox'
+          aria-expanded={this.open ? 'true' : 'false'}
+          aria-haspopup='listbox'
+          role='combobox'
+        >
           <slot />
-          <ul onClick={() => this.open = !this.open} class={{ open: this.open }}>
-            <li>
+          <ul
+            role='listbox'
+            onClick={() => this.open = !this.open} class={{ open: this.open }}>
+            <li role='option'>
               {this.currentSelected ? this.renderFirstLi() : 'Choose Option...'}
               {(!this.disabled && !this.readonly) &&
                 <mp-font-awesome class='selector' stringFontAwesome={`fas fa-angle-${this.open ? 'up' : 'down'}`} />}
             </li>
             {(!this.disabled && !this.readonly) && this.populateList.map((singleItem) =>
-              <li class={{ current: this.value === singleItem.value }} onClick={() => this.onChooseValue(singleItem)}>
+              <li role='option' class={{ current: this.value === singleItem.value }}
+                  onClick={() => this.onChooseValue(singleItem)}>
                 {(singleItem.faImage || this.defaultIcon) && <div>
                   <mp-font-awesome stringFontAwesome={singleItem.faImage || this.defaultIcon} />
                 </div>}

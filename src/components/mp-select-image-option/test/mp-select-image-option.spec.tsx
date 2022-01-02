@@ -26,11 +26,11 @@ describe('mp-select-image-option', () => {
       html: `<mp-select-image-option><input type='hidden' /></mp-select-image-option>`,
     });
     expect(page.root).toEqualHtml(`
-      <mp-select-image-option value=''>
+       <mp-select-image-option aria-controls='listbox' aria-expanded='false' aria-haspopup='listbox' role='combobox' value=''>
         <mock:shadow-root>
           <slot></slot>
-            <ul>
-             <li>
+            <ul role='listbox'>
+             <li role='option'>
                Choose Option...
                <mp-font-awesome class='selector' stringfontawesome='fas fa-angle-down'></mp-font-awesome>
            </li>
@@ -49,11 +49,11 @@ describe('mp-select-image-option', () => {
       ><input type='hidden' /></mp-select-image-option>),
     });
     expect(page.root).toEqualHtml(`
-      <mp-select-image-option value='1'>
+     <mp-select-image-option aria-controls='listbox' aria-expanded='false' aria-haspopup='listbox' role='combobox' value='1'>
         <mock:shadow-root>
         <slot></slot>
-            <ul>
-             <li>
+            <ul role='listbox'>
+             <li role='option'>
                <div>
                 <mp-font-awesome stringfontawesome='fab fa-amazon'></mp-font-awesome>
               </div>
@@ -62,7 +62,7 @@ describe('mp-select-image-option', () => {
                </div>
                <mp-font-awesome class='selector' stringfontawesome='fas fa-angle-down'></mp-font-awesome>
              </li>
-            <li class='current'>
+            <li role='option' class='current'>
              <div>
                <mp-font-awesome stringfontawesome='fab fa-amazon'></mp-font-awesome>
              </div>
@@ -70,12 +70,12 @@ describe('mp-select-image-option', () => {
                ciaone
              </div>
            </li>
-           <li>
+           <li role='option'>
              <div>
                prontone
              </div>
            </li>
-           <li>
+           <li role='option'>
              <div>
                gigione
              </div>
