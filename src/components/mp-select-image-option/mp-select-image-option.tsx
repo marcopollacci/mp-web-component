@@ -78,14 +78,14 @@ export class MpSelectImageOption {
       return (
         <Host
           aria-controls='listbox'
-          aria-expanded={this.open ? 'true' : 'false'}
+          aria-expanded={this.open && !this.disabled ? 'true' : 'false'}
           aria-haspopup='listbox'
           role='combobox'
         >
           <slot />
           <ul
             role='listbox'
-            onClick={() => this.open = !this.open} class={{ open: this.open }}>
+            onClick={() => this.open = !this.open} class={{ open: this.open && !this.disabled }}>
             <li role='option'>
               {this.currentSelected ? this.renderFirstLi() : 'Choose Option...'}
               {(!this.disabled && !this.readonly) &&
