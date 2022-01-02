@@ -86,6 +86,25 @@ describe('mp-select-image-option', () => {
       </mp-select-image-option>
     `);
   });
+  it('renders with disable value = true', async () => {
+    const page = await newSpecPage({
+      components: [MpSelectImageOption],
+      template: () => (<mp-select-image-option disabled={true}><input type='hidden' /></mp-select-image-option>),
+    });
+    expect(page.root).toEqualHtml(`
+        <mp-select-image-option aria-controls='listbox' aria-expanded='false' aria-haspopup='listbox' role='combobox' value=''>
+        <mock:shadow-root>
+          <slot></slot>
+            <ul role='listbox'>
+             <li role='option'>
+               Choose Option...
+           </li>
+         </ul>
+        </mock:shadow-root>
+        <input type='hidden'>
+      </mp-select-image-option>
+    `);
+  });
   describe('testing single function', () => {
     const elMpSelectImageOption = new MpSelectImageOption();
     beforeEach(() => {
