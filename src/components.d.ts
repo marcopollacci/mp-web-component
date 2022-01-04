@@ -17,6 +17,8 @@ export namespace Components {
         "readonly": boolean;
         "value": string;
     }
+    interface MpSurveyHelp {
+    }
     interface MpTextDescription {
         "titleComponent": string;
     }
@@ -34,6 +36,12 @@ declare global {
         prototype: HTMLMpSelectImageOptionElement;
         new (): HTMLMpSelectImageOptionElement;
     };
+    interface HTMLMpSurveyHelpElement extends Components.MpSurveyHelp, HTMLStencilElement {
+    }
+    var HTMLMpSurveyHelpElement: {
+        prototype: HTMLMpSurveyHelpElement;
+        new (): HTMLMpSurveyHelpElement;
+    };
     interface HTMLMpTextDescriptionElement extends Components.MpTextDescription, HTMLStencilElement {
     }
     var HTMLMpTextDescriptionElement: {
@@ -43,6 +51,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mp-font-awesome": HTMLMpFontAwesomeElement;
         "mp-select-image-option": HTMLMpSelectImageOptionElement;
+        "mp-survey-help": HTMLMpSurveyHelpElement;
         "mp-text-description": HTMLMpTextDescriptionElement;
     }
 }
@@ -58,12 +67,15 @@ declare namespace LocalJSX {
         "readonly"?: boolean;
         "value"?: string;
     }
+    interface MpSurveyHelp {
+    }
     interface MpTextDescription {
         "titleComponent"?: string;
     }
     interface IntrinsicElements {
         "mp-font-awesome": MpFontAwesome;
         "mp-select-image-option": MpSelectImageOption;
+        "mp-survey-help": MpSurveyHelp;
         "mp-text-description": MpTextDescription;
     }
 }
@@ -73,6 +85,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mp-font-awesome": LocalJSX.MpFontAwesome & JSXBase.HTMLAttributes<HTMLMpFontAwesomeElement>;
             "mp-select-image-option": LocalJSX.MpSelectImageOption & JSXBase.HTMLAttributes<HTMLMpSelectImageOptionElement>;
+            "mp-survey-help": LocalJSX.MpSurveyHelp & JSXBase.HTMLAttributes<HTMLMpSurveyHelpElement>;
             "mp-text-description": LocalJSX.MpTextDescription & JSXBase.HTMLAttributes<HTMLMpTextDescriptionElement>;
         }
     }

@@ -22,6 +22,16 @@
 
 
 <mp-font-awesome></mp-font-awesome>
+<br />
+
+<mp-survey-help>
+  <slot exit-choose='true' name='question-one' next-question='question-two'>
+    Ciaone?
+  </slot>
+  <slot exit-choose='false' name='question-two' next-question='2'>
+    Domanda 2
+  </slot>
+</mp-survey-help>
 
 <script type='application/javascript'>
   const [myElem] = document.getElementsByTagName('mp-select-image-option');
